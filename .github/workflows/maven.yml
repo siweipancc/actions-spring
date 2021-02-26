@@ -40,4 +40,4 @@ jobs:
           REPO: self
           BRANCH: master
           FOLDER: target
-          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
+          GITHUB_TOKEN: ${{ secrets.DEPLOY_PRIVATE_KEY }}
