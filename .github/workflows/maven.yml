@@ -33,8 +33,6 @@ jobs:
 
       - name: Build with Maven
         run: mvn install javadoc:javadoc -e -B -V -Prun-its
-        
-      - name: save to git
         uses: mikeal/publish-to-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
