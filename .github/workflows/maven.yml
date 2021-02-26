@@ -34,8 +34,10 @@ jobs:
       - name: Build with Maven
         run: mvn install javadoc:javadoc -e -B -V -Prun-its
 
-      - name: saveToGithub
-        uses: mikeal/publish-to-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH_NAME: 'master'
+      - name: Deploy
+          uses: s0/git-publish-subdir-action@develop
+          env:
+            REPO: self
+            BRANCH: master
+            FOLDER: target
+            SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
