@@ -16,6 +16,7 @@ public class HelloController {
     public ResponseEntity<Map<?, ?>> hello() {
         HashMap<Object, Object> map = new HashMap<>();
         map.put("data", "hello");
+
         return ResponseEntity.ok(map);
     }
 
